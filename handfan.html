@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="site2.css">
+</head>
+<body>
+  <div>
+    <section style="display: flex;">
+  <div >
+    <button class="buttons" type="back" >
+      <a href="bamboo.html">⬅</a>
+    </button>
+  </div>  
+  <div class="container">
+   
+
+    <div class="product-image">
+      <img   src="image/bb5.webp" alt="">
+    </div>
+    <div class="product-details">
+      <h1>HAND FAN</h1>
+      <p class="subtitle">pThis is a traditional hand fan, commonly known in India as a "Pankha".>
+      <p class="price">₹ 269.00</p>
+      <div class="quantity-selector">
+        <button onclick="decrease()">−</button>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="increase()">+</button>
+      </div>
+      <!-- <div class="action-buttons">
+        <button class="wishlist">♥</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> -->
+
+      <div class="tabs">
+        <button class="tab active">Description</button>
+        
+      </div>
+      <div class="tab-content">
+        <p><strong>Craft Type:</strong> Bamboo</p>
+        <p>This beautifully handcrafted traditional hand fan is made from natural bamboo or palm leaves, woven tightly in a circular pattern.
+            The fan is mounted on a sturdy wooden handle, making it easy to grip and use manually. The circular weave not only enhances airflow but also adds an artistic and cultural touch.
+        Personal cooling in hot weather
+        </p>
+        <p><strong>Made in:</strong>Chandrapur</p>
+        <p><strong>Material:</strong> Bamboo sticks</p>
+         <!-- <button> -->
+<!-- <a href="customer_details.php" style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">BUY NOW</a> -->
+<a href="customer_details.php?product_id=PROD10" class="buy-now-btn">Buy Now</a>
+<style>
+  .buy-now-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff; /* Bootstrap Blue */
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+  }
+
+  .buy-now-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>
+
+
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

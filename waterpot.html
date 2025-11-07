@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>waterpot</title>
+  <link rel="stylesheet" href="site2.css">
+</head>
+<body>
+  <div>
+    <section style="display: flex;">
+  <div >
+    <button class="buttons" type="back" >
+      <a href="pottery.html">⬅</a>
+    </button>
+  </div>  
+  <div class="container">
+   
+
+    <div class="product-image">
+      <img   src="image/pot6.jpg" alt="">
+    </div>
+    <div class="product-details">
+      <h1> EARTHAN WATER POT</h1>
+      <p class="subtitle">Experience the natural way of storing and cooling water with this handcrafted earthen water pot.</p>
+      <p class="price">₹ 899.00</p>
+      <div class="quantity-selector">
+        <button onclick="decrease()">−</button>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="increase()">+</button>
+      </div>
+      <!-- <div class="action-buttons">
+        <button class="wishlist">♥</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> -->
+
+      <div class="tabs">
+        <button class="tab active">Description</button>
+        
+      </div>
+      <div class="tab-content">
+        <p><strong>Craft Type:</strong>  Pottery</p>
+        <p>Made using traditional pottery techniques, this pot is porous and allows water to evaporate slowly, keeping it naturally cool even in hot climates.</p>
+        <p> rustic texture, and earthy scent, the pot adds a touch of tradition and sustainability to your home.</p>
+        <p><strong>Made in:</strong> Karnataka</p>
+        <p><strong>Material:</strong> Natural Clay</p>
+        <!-- <a href="customer_details.php" style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">BUY NOW</a> -->
+<a href="customer_details.php?product_id=PROD5" class="buy-now-btn">Buy Now</a>
+<style>
+  .buy-now-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff; /* Bootstrap Blue */
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+  }
+
+  .buy-now-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>
+
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

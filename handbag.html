@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="site2.css">
+</head>
+<body>
+  <div>
+    <section style="display: flex;">
+  <div >
+    <button class="buttons" type="back" >
+      <a href="textiles.html">⬅</a>
+    </button>
+  </div>  
+  <div class="container">
+   
+
+    <div class="product-image">
+      <img   src="image/tt2.webp" alt="">
+    </div>
+    <div class="product-details">
+      <h1>HANDBAG</h1>
+      <p class="subtitle">The casual shoulder bag with hand embroidery.</p>
+      <p class="price">₹ 299.00</p>
+      <div class="quantity-selector">
+        <button onclick="decrease()">−</button>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="increase()">+</button>
+      </div>
+      <!-- <div class="action-buttons">
+        <button class="wishlist">♥</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> -->
+
+      <div class="tabs">
+        <button class="tab active">Description</button>
+        
+      </div>
+      <div class="tab-content">
+        <p><strong>Craft Type:</strong>Textiles</p>
+        <p>Add a splash of traditional charm to your style with this multicolored ethnic embroidered tote bag. This handcrafted beauty features intricate mirror work, vivid thread embroidery
+        The sturdy black shoulder straps provide comfort and durability, while the spacious interior makes it ideal for everyday use.</p>
+        <p><strong>Made in:</strong>Chandrapur</p>
+        <p><strong>Material:</strong> Cotton fabric with detailed embroidery and mirror work</p>
+        <!-- <a href="customer_details.php" style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">BUY NOW</a> -->
+      <a href="customer_details.php?product_id=PROD13" class="buy-now-btn">Buy Now</a>
+        
+      <style>
+        .buy-now-btn {
+          display: inline-block;
+          padding: 14px 24px;
+          font-size: 1.1rem;
+          color: white;
+          background-color: #007bff; /* Bootstrap Blue */
+          border: none;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: bold;
+          text-align: center;
+          transition: background 0.3s ease;
+        }
+        .buy-now-btn:hover {
+          background-color: #0056b3; /* Darker shade on hover */
+        }
+        </style
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

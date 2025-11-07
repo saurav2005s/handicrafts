@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Cart | E-Commerce</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color:#333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #e9ecef;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0d6efd;
+    }
+    .logout {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .logout a {
+      color: #fff;
+      background-color: #dc3545;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+
+    
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hello, </h1>
+  <p>Your Shopping Cart 🛒</p>
+</header>
+
+<nav>
+  
+  <a href="cart.html">My Cart</a>
+  <a href="home.html">Home</a>
+  <a href="dashboard.php">Dashboard</a>
+</nav>
+
+<section class="container">
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="image/7.jpg" alt="Spice Box"/>
+        <h2>Clay Pot</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ <span>(67 reviews)</span></div>
+        <div class="price">
+          Rs. 999 <span class="old-price">Rs. 1,749</span> <span class="discount">(43% Off)</span>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="image/pic2.webp" alt="Pendant Lamp"/>
+        <h2>Wooden Basket</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ <span>(36 reviews)</span></div>
+        <div class="price">
+          Rs. 1,604 <span class="old-price">Rs. 3,499</span> <span class="discount">(54% Off)</span>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="image/pic3.webp" alt="Planter Pots"/>
+        <h2>Wall Decor</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ <span>(2 reviews)</span></div>
+        <div class="price">
+          Rs. 999 <span class="old-price">Rs. 1,375</span> <span class="discount">(27% Off)</span>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="image/pic5.webp" alt="Table Lamp"/>
+        <h2>Coconut Bowl</h2>
+        <div class="rating">⭐⭐⭐⭐⭐ <span>(36 reviews)</span></div>
+        <div class="price">
+          Rs. 1,104 <span class="old-price">Rs. 2,415</span> <span class="discount">(54% Off)</span>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="logout">
+    <a href="home.html">Logout</a>
+  </div>
+
+   
+</body>
+</html>

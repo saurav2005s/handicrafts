@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handicrapt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .contact-page-content {
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+
+        .contact-page-content h1 {
+            font-size: 2.8em;
+            color: #4A0082;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for form and info */
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-form-section, .contact-info-section {
+            background-color: #F8F0FF; /* Light lavender background for sections */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form-section h2, .contact-info-section h2 {
+            font-size: 1.8em;
+            color: #6C2B80;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4A0082;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            color: #333;
+            box-sizing: border-box; /* Include padding in width */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+            border-color: #6C2B80;
+            box-shadow: 0 0 0 3px rgba(108, 43, 128, 0.2);
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background-color: #28A745; /* Green from your theme */
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: #1f8b37;
+            transform: translateY(-2px);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .contact-info-item i {
+            font-size: 1.5em;
+            color: #4A0082; /* Purple icon */
+            margin-right: 15px;
+            width: 30px; /* Fixed width for icon for alignment */
+            text-align: center;
+        }
+
+        .contact-info-item a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info-item a:hover {
+            color: #4A0082;
+        }
+
+        .map-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: #777;
+            border: 1px dashed #bbb;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        /* You'd replace .map-placeholder with actual map embed code from Google Maps/OpenStreetMap */
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                padding: 15px 10px;
+            }
+            .main-nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .main-nav li {
+                margin-left: 0;
+            }
+            .login-button {
+                margin-top: 15px;
+            }
+
+            .contact-page-content h1 {
+                font-size: 2.2em;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+                gap: 30px;
+            }
+            .contact-form-section, .contact-info-section {
+                padding: 25px;
+            }
+            .map-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+            }
+            .main-header {
+                padding: 10px 15px;
+            }
+            .main-nav a {
+                font-size: 0.9em;
+            }
+            .logo {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <link rel="stylesheet" href="site.css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: aqua;">
+        <div class="container-fluid">
+          <img  class="navimg" src="./Untitled design2.jpg" alt="">
+          <a class="navbar-brand" style=" margin-right: 2.5cm; margin-left: 0.5cm;" href="#">Crafty Creations</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div class="nav">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              <a class="nav-link active" href="about us.html">About Us</a>
+              <a class="nav-link active" href="collection.html">Collection</a>  
+              <a class="nav-link active" href="#">Blogs</a>
+              <a class="nav-link active" href="#">Review</a>
+              <a class="nav-link active" href="contact us.html">Contact Us</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- contact us page -->
+
+      <main class="contact-page-content">
+        <div class="container">
+            <h1>Get In Touch With Handicraft</h1>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+               We’ve created a website where beginners can explore, and the community can come together through the love of handmade craftsmanship.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <form action="message.php" method="POST"> <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Regarding an products inquiry...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required placeholder="Tell us more about your needs..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-section">
+                    <h2>Our Contact Details</h2>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: <a href="mailto:info@eventsphere.com">info@eventsphere.com</a></span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Phone: <a href="tel:+911234567890">+91 12345 67890</a></span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Address: 123 Event Lane, Solapur, Maharashtra, India</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Business Hours: Mon - Fri: 9:00 AM - 6:00 PM IST</span>
+                    </div>
+                    <h3 style="margin-top: 40px; color: #6C2B80; font-size: 1.5em;">Follow Us</h3>
+                    <div class="contact-info-item" style="margin-top: 15px; font-size: 1.8em;">
+                        <a href="#" style="color: #4A0082; margin-right: 15px;"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" style="color: #4A0082; margin-right: 15px;"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" style="color: #4A0082; margin-right: 15px;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: #4A0082;"><i class="fab fa-instagram-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h2>Find Us On The Map</h2>
+                <div class="map-placeholder">
+                    <p>Map Placeholder: Embed your map here</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

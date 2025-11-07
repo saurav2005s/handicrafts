@@ -1,0 +1,243 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  file_put_contents("log.txt", "Form submitted\n", FILE_APPEND);
+
+    
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+ 
+
+    // if ($password !== $confirm_password) {
+    //     $message = "Passwords do not match!";
+    // } else {
+    //     // Check if email already exists
+    //     $check = $conn->prepare("SELECT id FROM register WHERE email = ?");
+    //     $check->bind_param("s", $email);
+    //     $check->execute();
+    //     $check->store_result();
+
+        if ($check->num_rows > 0) {
+            $message = "Email already registered. Please use another one.";
+        } else {
+            // Hash the password
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $stmt = $conn->prepare("INSERT INTO register (full_name, mobile_number, email, password) VALUES (?, ?, ?, ?)");
+
+            if ($stmt === false) {
+                die("Prepare failed: " . $conn->error);
+            }
+
+            $stmt->bind_param("ssss", $full_name, $mobile_number, $email, $hashed_password);
+
+            if ($stmt->execute()) {
+                $message = "Registration successful!";
+            } else {
+                $message = "Insert failed: " . $stmt->error;
+            }
+
+            $stmt->close();
+        }
+
+        $check->close();
+    }
+// }
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- css -->
+    <style>
+      * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f4f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+}
+
+.login-container {
+  background: #b2ebf1;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #080505;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #160d0d;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.toggle-password {
+  position: relative;
+}
+
+.toggle-password-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1140a7;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1f22c4;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #199c24;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+    </style>
+</head>
+
+<body>
+  <!-- login form -->
+    <div class="login-container">
+      <form id="loginForm" action="" method="POST"></form>
+    <h2>Login Form</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="form-group toggle-password">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+        <button type="button" class="toggle-password-button" onclick="togglePassword()">Show</button>
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <button type="submit" class="login-button">Login</button>
+      <div class="a">
+        <p style="justify-content: center;position: relative;">Already have an account?  <a link href="form.html">Register</a></p>
+    </div>
+    </form>
+  </div>
+
+  
+  <!-- js -->
+<script src="login.js">
+  function togglePassword() {
+  const passwordInput = document.getElementById("password");
+  const button = document.querySelector(".toggle-password-button");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    button.textContent = "Hide";
+  } else {
+    passwordInput.type = "password";
+    button.textContent = "Show";
+  }
+}
+
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  // e.preventDefault();
+  if (!valid) e.preventDefault();
+// else allow default submit — no preventDefault()
+
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
+
+  emailError.textContent = "";
+  passwordError.textContent = "";
+
+  let valid = true;
+
+  if (!validateEmail(email)) {
+    emailError.textContent = "Please enter a valid email address.";
+    valid = false;
+  }
+
+  if (password.length < 6) {
+    passwordError.textContent = "Password must be at least 6 characters.";
+    valid = false;
+  }
+
+  if (valid) {
+    alert("Login successful (this is a placeholder)");
+    // You can handle login logic here
+  }
+});
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+</script>
+</body>
+</html>

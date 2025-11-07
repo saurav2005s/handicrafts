@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- css -->
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background: #fbfafb;
+  margin: 0;
+  padding: 0;
+}
+
+.aju {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  background: rgb(163, 218, 223);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(17, 212, 66, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1cc282;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#message {
+  text-align: center;
+  margin-top: 15px;
+  color: red;
+}
+    </style>
+</head>
+
+<body>
+  <!-- form code -->
+<div class="aju">
+    <form id="registrationForm">
+      <h2>Register</h2>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="Mobile Number">Mobile Number</label>
+        <input type="number" id="number" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6" />
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required />
+      </div>
+      <button type="submit">Register</button>
+      <div class="a">
+        <p style="justify-content: center;position: relative;">Already have an account?  <a link href="login.html">Login</a></p>
+    </div>
+      <p id="message"></p>
+    </form>
+  </div>
+  <!-- js -->
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent form submission
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const message = document.getElementById('message');
+
+  if (password !== confirmPassword) {
+    message.textContent = "Passwords do not match!";
+    return;
+  }
+
+  
+  message.style.color = "green";
+  message.textContent = "Registration successful!";
+  
+  // You can handle the form data here (e.g., send to backend)
+  console.log({ name, email, password });
+});
+  </script>
+</body>
+</html>

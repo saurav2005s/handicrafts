@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="site2.css">
+</head>
+<body>
+  <div>
+    <section style="display: flex;">
+  <div >
+    <button class="buttons" type="back" >
+      <a href="textiles.html">⬅</a>
+    </button>
+  </div>  
+  <div class="container">
+   
+
+    <div class="product-image">
+      <img   src="image/tt3.jpg" alt="">
+    </div>
+    <div class="product-details">
+      <h1>FLOOR-MAT</h1>
+      <p class="subtitle">This is a decorative round door mat designed with a visually striking spiral pattern.</p>
+      <p class="price">₹ 320.00</p>
+      <div class="quantity-selector">
+        <button onclick="decrease()">−</button>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="increase()">+</button>
+      </div>
+      <!-- <div class="action-buttons">
+        <button class="wishlist">♥</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> -->
+
+      <div class="tabs">
+        <button class="tab active">Description</button>
+        
+      </div>
+      <div class="tab-content">
+        <p><strong>Craft Type:</strong>Textiles</p>
+        <p>Bring an artistic and traditional flair to your home with this set of intricately designed square ethnic cushion covers or wall/table mats.
+             Each piece showcases detailed print or embroidery inspired by traditional Asian or Tibetan textile art. used in Pooja mats,Table toppers,Decorative centerpieces.</p>
+        <p><strong>Made in:</strong>Chandrapur</p>
+        <p><strong>Material:</strong> A cotton blend with traditional embroidery</p>
+        <p><strong>set of 4 pieces</strong></p>
+        <!-- <a href="customer_details.php" style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">BUY NOW</a> -->
+      <a href="customer_details.php?product_id=PROD17" class="buy-now-btn">Buy Now</a>
+      <style>
+        .buy-now-btn {
+          display: inline-block;
+          padding: 14px 24px;
+          font-size: 1.1rem;
+          color: white;
+          background-color: #007bff; /* Bootstrap Blue */
+          border: none;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: bold;
+          text-align: center;
+        }
+        .buy-now-btn:hover {
+          background-color: #0056b3; /* Darker shade on hover */
+        }
+      </style>
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

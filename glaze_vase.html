@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VASE</title>
+  <link rel="stylesheet" href="site2.css">
+</head>
+<body>
+  <div>
+    <section style="display: flex;">
+  <div >
+    <button class="buttons" type="back" >
+      <a href="pottery.html">⬅</a>
+    </button>
+  </div>  
+  <div class="container">
+   
+
+    <div class="product-image">
+      <img   src="image/pot5.jpg" alt="">
+    </div>
+    <div class="product-details">
+      <h1>GLAZE VASE</h1>
+      <p class="subtitle">Made by hand, this vase is handy to have around — feel free to use as you fancy.</p>
+      <p class="price">₹ 999.00</p>
+      <div class="quantity-selector">
+        <button onclick="decrease()">−</button>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="increase()">+</button>
+      </div>
+      <!-- <div class="action-buttons">
+        <button class="wishlist">♥</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> -->
+
+      <div class="tabs">
+        <button class="tab active">Description</button>
+        
+      </div>
+      <div class="tab-content">
+        <p><strong>Craft Type:</strong>  Pottery</p>
+        <p>This beautifully crafted ceramic vase combines timeless elegance with a rustic charm. Hand-thrown by skilled artisans, its subtle curves and natural finish make it a versatile piece for any space — whether holding fresh flowers or standing gracefully on its own.</p>
+        <p>Perfect for your living room, dining table, or entryway decor.</p>
+        <p><strong>Made in:</strong> Karnataka</p>
+        <p><strong>Material:</strong> Stoneware</p>
+        <!-- <a href="customer_details.php" style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">BUY NOW</a> -->
+      <a href="customer_details.php?product_id=PROD11" class="buy-now-btn">Buy Now</a>
+<style>
+  .buy-now-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff; /* Bootstrap Blue */
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+  }
+
+  .buy-now-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>
+
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>
